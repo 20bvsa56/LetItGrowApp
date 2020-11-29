@@ -1,11 +1,9 @@
-import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:letItGrow/src/blocs/navigation_bloc.dart';
 import 'package:letItGrow/src/size/size_config.dart';
 import 'package:letItGrow/src/ui/appbar.dart';
-
-import '../show_up.dart';
+import 'package:letItGrow/src/ui/drawer.dart';
 
 class HomePage extends StatefulWidget with NavigationStates {
   final Widget child;
@@ -23,14 +21,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: drawer(),
         backgroundColor: Colors.white,
         appBar: MyAppBar(
           title: Text('Home',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: SizeConfig.blockSizeHorizontal * 6,
+                  fontSize: SizeConfig.blockSizeHorizontal * 4.5,
                   fontWeight: FontWeight.w600)),
         ),
+        
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 0, right: 0),

@@ -16,11 +16,12 @@ class SideBarLayout extends StatelessWidget {
       create: (context) => NavigationBloc(HomePage()),
       child: Stack(
         children: [
+          SideBar(),
           BlocBuilder<NavigationBloc, NavigationStates>(
               builder: (context, navigationState) {
             return navigationState as Widget;
           }),
-          SideBar()
+          
         ],
       ),
     ));

@@ -3,6 +3,7 @@ import 'package:letItGrow/src/blocs/navigation_bloc.dart';
 import 'package:letItGrow/src/model/career_model.dart';
 import 'package:letItGrow/src/size/size_config.dart';
 import 'package:letItGrow/src/ui/appbar.dart';
+import 'package:letItGrow/src/ui/drawer.dart';
 import 'package:letItGrow/src/ui/show_up.dart';
 
 import 'career_detail_page.dart';
@@ -56,22 +57,25 @@ class _CareerPageState extends State<CareerPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: drawer(),
         backgroundColor: Colors.white,
         appBar: MyAppBar(
+         
           title: Text('Career',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: SizeConfig.blockSizeHorizontal * 6,
+                  fontSize: SizeConfig.blockSizeHorizontal * 4.5,
                   fontWeight: FontWeight.w600)),
         ),
         body: Column(
           children: [
-            SizedBox(height: SizeConfig.blockSizeVertical * 2),
+            SizedBox(height: SizeConfig.blockSizeVertical * 1.2),
             Text(
               'Available Vacancies',
               style: TextStyle(
-                  color: Color(0xff1c9c9c),
-                  fontSize: SizeConfig.blockSizeVertical * 2.8),
+                  color: Colors.black54,
+                  fontSize: SizeConfig.blockSizeVertical * 2,
+                  fontWeight: FontWeight.w500),
             ),
             SizedBox(height: SizeConfig.blockSizeVertical),
             Expanded(
@@ -99,9 +103,9 @@ class _VacancyViewState extends State<VacancyView> {
   int delayAmount = 300;
   List<BoxShadow> shadow = [
     BoxShadow(
-        color: Colors.grey.withOpacity(0.1),
+        color: Colors.grey[400].withOpacity(0.2),
         blurRadius: 0.2,
-        spreadRadius: 0.3,
+        spreadRadius: 0.2,
         offset: Offset(3, 3))
   ];
   @override
@@ -125,7 +129,8 @@ class _VacancyViewState extends State<VacancyView> {
                 delay: delayAmount + 1200,
                 child: Text('Designation-',
                     style: TextStyle(
-                        fontSize: SizeConfig.blockSizeVertical * 2.3,
+                        fontSize: SizeConfig.blockSizeVertical * 2,
+                        fontWeight: FontWeight.w500,
                         color: Color(0xff1c9c9c).withOpacity(0.6))),
               ),
               SizedBox(height: SizeConfig.blockSizeVertical / 2),
@@ -133,15 +138,16 @@ class _VacancyViewState extends State<VacancyView> {
                 delay: delayAmount + 2300,
                 child: Text(widget.vacancy.designation,
                     style: TextStyle(
-                        fontSize: SizeConfig.blockSizeVertical * 2.4,
-                        color: Colors.black38)),
+                        fontSize: SizeConfig.blockSizeVertical * 1.8,
+                        color: Colors.black45)),
               ),
               SizedBox(height: SizeConfig.blockSizeVertical * 2),
               ShowUp(
                 delay: delayAmount + 1200,
                 child: Text('Vacancy Number-',
                     style: TextStyle(
-                        fontSize: SizeConfig.blockSizeVertical * 2.3,
+                        fontSize: SizeConfig.blockSizeVertical * 2,
+                        fontWeight: FontWeight.w500,
                         color: Color(0xff1c9c9c).withOpacity(0.6))),
               ),
               SizedBox(height: SizeConfig.blockSizeVertical / 2),
@@ -149,8 +155,8 @@ class _VacancyViewState extends State<VacancyView> {
                 delay: delayAmount + 2300,
                 child: Text(widget.vacancy.vacancyNumber.toString(),
                     style: TextStyle(
-                        fontSize: SizeConfig.blockSizeVertical * 2.4,
-                        color: Colors.black38)),
+                        fontSize: SizeConfig.blockSizeVertical * 1.8,
+                        color: Colors.black45)),
               )
             ]),
           ),
@@ -158,11 +164,8 @@ class _VacancyViewState extends State<VacancyView> {
           ShowUp(
             delay: delayAmount + 3000,
             child: IconButton(
-                iconSize: SizeConfig.blockSizeHorizontal * 7,
-                icon: Icon(
-                  Icons.remove_red_eye,
-                  color: Color(0xff1c9c9c),
-                ),
+                iconSize: SizeConfig.blockSizeHorizontal * 5.2,
+                icon: Icon(Icons.remove_red_eye, color: Colors.black54),
                 onPressed: () {
                   Navigator.push(
                       context,

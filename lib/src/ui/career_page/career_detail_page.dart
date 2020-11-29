@@ -46,24 +46,23 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                     .map((elements) => CareerDetailsView(details: elements))
                     .toList()),
           ),
-          SizedBox(height: SizeConfig.blockSizeVertical),
           GestureDetector(
             onTap: () => _careerForm(context),
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 40),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0xff36e3c7)),
+                  color: Color(0xff116466).withOpacity(0.7)),
               child: Text(
                 'Apply',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: SizeConfig.blockSizeHorizontal * 6,
+                    fontSize: SizeConfig.blockSizeHorizontal * 5,
                     fontWeight: FontWeight.w600),
               ),
             ),
           ),
-          SizedBox(height: SizeConfig.blockSizeVertical),
+          SizedBox(height: SizeConfig.blockSizeVertical * 3),
         ]),
       ),
     );
@@ -74,13 +73,13 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
         context: context,
         builder: (context) {
           return Container(
-            margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
-            height: SizeConfig.blockSizeVertical * 47,
+            margin: EdgeInsets.fromLTRB(25, 20, 25, 0),
+            height: SizeConfig.blockSizeVertical * 42,
             child: Column(
               children: [
                 TextField(
                     style: TextStyle(
-                        fontSize: SizeConfig.safeBlockHorizontal * 5,
+                        fontSize: SizeConfig.safeBlockHorizontal * 3.5,
                         color: Colors.black38),
                     decoration: InputDecoration(
                       errorStyle: TextStyle(
@@ -90,7 +89,7 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                           Icon(Icons.person, color: Colors.black38, size: 20),
                       labelText: 'Name',
                       labelStyle: TextStyle(
-                          fontSize: SizeConfig.safeBlockHorizontal * 4,
+                          fontSize: SizeConfig.safeBlockHorizontal * 3,
                           color: Colors.black38),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -102,7 +101,7 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                 SizedBox(height: SizeConfig.blockSizeVertical * 2),
                 TextField(
                     style: TextStyle(
-                        fontSize: SizeConfig.safeBlockHorizontal * 5,
+                        fontSize: SizeConfig.safeBlockHorizontal * 3.5,
                         color: Colors.black38),
                     decoration: InputDecoration(
                       errorStyle: TextStyle(
@@ -112,7 +111,7 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                           Icon(Icons.email, color: Colors.black38, size: 20),
                       labelText: 'Email',
                       labelStyle: TextStyle(
-                          fontSize: SizeConfig.safeBlockHorizontal * 4,
+                          fontSize: SizeConfig.safeBlockHorizontal * 3,
                           color: Colors.black38),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -124,7 +123,7 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                 SizedBox(height: SizeConfig.blockSizeVertical * 2),
                 TextField(
                     style: TextStyle(
-                        fontSize: SizeConfig.safeBlockHorizontal * 5,
+                        fontSize: SizeConfig.safeBlockHorizontal * 3.5,
                         color: Colors.black38),
                     decoration: InputDecoration(
                       errorStyle: TextStyle(
@@ -134,7 +133,7 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                           color: Colors.black38, size: 20),
                       labelText: 'Phone Number',
                       labelStyle: TextStyle(
-                          fontSize: SizeConfig.safeBlockHorizontal * 4,
+                          fontSize: SizeConfig.safeBlockHorizontal * 3,
                           color: Colors.black38),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -147,32 +146,31 @@ class _CareerDetailPageState extends State<CareerDetailPage> {
                 Row(children: [
                   Text('Upload CV',
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: SizeConfig.safeBlockHorizontal * 5,
-                          color: Color(0xff36e3c7))),
-                  SizedBox(width: SizeConfig.safeBlockHorizontal * 4),
+                          fontSize: SizeConfig.blockSizeVertical * 1.8,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff1c9c9c).withOpacity(0.6))),
+                  SizedBox(width: SizeConfig.safeBlockHorizontal * 3),
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
                           border: Border.all(width: 1, color: Colors.black54)),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 8),
                       child: Text('Choose File',
                           style: TextStyle(
-                              fontSize: SizeConfig.safeBlockHorizontal * 4.8,
+                              fontSize: SizeConfig.safeBlockHorizontal * 3.5,
                               color: Colors.black38)))
                 ]),
                 SizedBox(height: SizeConfig.blockSizeVertical * 3),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 40),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Color(0xff36e3c7)),
+                      color: Color(0xff116466).withOpacity(0.7)),
                   child: Text(
                     'Send',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: SizeConfig.blockSizeHorizontal * 6,
+                        fontSize: SizeConfig.blockSizeHorizontal * 5,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -202,13 +200,13 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: SizeConfig.blockSizeVertical * 78,
+        height: SizeConfig.blockSizeVertical * 75,
         decoration: BoxDecoration(
             color: Colors.white70,
             boxShadow: shadow,
             borderRadius: BorderRadius.circular(15)),
-        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        padding: EdgeInsets.fromLTRB(25, 20, 25, 0),
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.fromLTRB(25, 10, 25, 10),
         child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(height: SizeConfig.blockSizeVertical * 2),
@@ -235,7 +233,7 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
                       ),
                       Text('Department',
                           style: TextStyle(
-                              fontSize: SizeConfig.blockSizeVertical * 3,
+                              fontSize: SizeConfig.blockSizeVertical * 2.2,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff1c9c9c).withOpacity(0.6))),
                     ],
@@ -284,7 +282,7 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
                       ),
                       Text('Designation',
                           style: TextStyle(
-                              fontSize: SizeConfig.blockSizeVertical * 3,
+                              fontSize: SizeConfig.blockSizeVertical * 2.2,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff1c9c9c).withOpacity(0.6))),
                     ],
@@ -333,7 +331,7 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
                       ),
                       Text('Job Description',
                           style: TextStyle(
-                              fontSize: SizeConfig.blockSizeVertical * 3,
+                              fontSize: SizeConfig.blockSizeVertical * 2.2,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff1c9c9c).withOpacity(0.6))),
                     ],
@@ -382,7 +380,7 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
                       ),
                       Text('Number of Vacancies',
                           style: TextStyle(
-                              fontSize: SizeConfig.blockSizeVertical * 3,
+                              fontSize: SizeConfig.blockSizeVertical * 2.2,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff1c9c9c).withOpacity(0.6))),
                     ],
@@ -401,12 +399,6 @@ class _CareerDetailsViewState extends State<CareerDetailsView> {
                 ]),
               )
             ]),
-            Divider(
-              color: Colors.grey[500],
-              thickness: 0.2,
-              indent: 0.2,
-              endIndent: 0.2,
-            ),
           ]),
         ));
   }

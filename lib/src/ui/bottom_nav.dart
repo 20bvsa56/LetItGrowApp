@@ -54,29 +54,31 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
             ? BoxDecoration(
                 color: Color(0xff36e3c7),
                 gradient: LinearGradient(colors: [
-                  Color(0xff36e3c7).withOpacity(0.28),
-                  Color(0xff36e3c7).withOpacity(0.015)
+                  Colors.grey.withOpacity(0.2),
+                  Color(0xff36e3c7).withOpacity(0.010)
                 ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
                 border: Border(
                     bottom: BorderSide(
-                        width: SizeConfig.blockSizeHorizontal,
+                        width: SizeConfig.blockSizeHorizontal / 2,
                         color: index == _selectedIndex
-                            ? Color(0xff36e3c7)
+                            ? Color(0xff36e3c7).withOpacity(0.3)
                             : Colors.white),
                     top: BorderSide(
-                        width: SizeConfig.blockSizeHorizontal / 10,
-                        color: Color(0xff36e3c7).withOpacity(0.5))),
+                        width: SizeConfig.blockSizeHorizontal / 20,
+                        color: Colors.grey)),
               )
             : BoxDecoration(
                 color: Colors.white,
                 border: Border(
                     top: BorderSide(
-                        width: SizeConfig.blockSizeHorizontal / 8,
-                        color: Color(0xff36e3c7).withOpacity(0.5)))),
+                        width: SizeConfig.blockSizeHorizontal / 20,
+                        color: Colors.grey))),
         child: Column(
           children: [
             Icon(icon,
-                color: Colors.grey.withOpacity(0.8),
+                color: index == _selectedIndex
+                    ? Color(0xff116466).withOpacity(0.7)
+                    : Color(0xff116466).withOpacity(0.5),
                 size: SizeConfig.blockSizeHorizontal * 7),
           ],
         ),
